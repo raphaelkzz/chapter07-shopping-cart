@@ -4,8 +4,8 @@ Java Servlet/JSP recreation of the CD cart demonstrated at <https://ltwebbt3.onr
 
 ## Run locally
 
-Use Java 17 and Maven to run `mvn clean package`, then deploy `target/ROOT.war` to Tomcat 10.1. The app is available at the Tomcat root URL. Or build the Dockerfile and publish port 10000.
+Use Java 17 and Maven to run `mvn clean package`, then deploy `target/ROOT.war` to Tomcat 10.1. The app is available at the Tomcat root URL. To build the Docker image after changing the source, copy `target/ROOT.war` to `deploy/ROOT.war` and publish port 10000.
 
 ## Render
 
-Create a free Docker web service from this repository. The startup script configures Tomcat to listen on Render's `PORT` environment variable, defaulting to 10000.
+The free Docker web service uses the prebuilt WAR in `deploy/ROOT.war`, so Render does not need to download Maven dependencies during each deploy. The startup script configures Tomcat to listen on Render's `PORT` environment variable, defaulting to 10000.
